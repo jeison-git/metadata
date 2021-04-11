@@ -10,19 +10,10 @@ class Course extends Model
     use HasFactory;
 
     protected $guarded   = ['id', 'status'];
-    protected $withCount = ['students', 'reviews'];
 
     const BORRADOR  = 1;
     const REVISION  = 2;
     const PUBLICADO = 3;
-
-    public function getRatingAttribute(){
-        if($this->reviews_count){
-            return round($this->reviews->avg('rating'),1);
-        }else{
-            return 5;
-        }        
-    }
 
     //Query Scopes // filtrado de categorias y niveles
     public function scopeCategory($query, $category_id){
@@ -33,6 +24,11 @@ class Course extends Model
     public function scopeLevel($query, $level_id){
         if($level_id){
             return $query->where('level_id', $level_id);
+        }
+    }
+    public function scopeDay($query, $day_id){
+        if($day_id){
+            return $query->where('day_id', $day_id);
         }
     }
     

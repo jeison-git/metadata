@@ -17,7 +17,7 @@ class CreateLessonsTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->longText('contents');
+            $table->text('contents');
             
             $table->unsignedBigInteger('section_id');
 
