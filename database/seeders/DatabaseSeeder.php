@@ -14,14 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Storage::deleteDirectory('cursos');
-        Storage::makeDirectory('cursos');
+        Storage::deleteDirectory(storage_path ('app/public/cursos'));
+        Storage::makeDirectory(storage_path ('app/public/cursos'));
 
         // \App\Models\User::factory(10)->create();
 
-        //$this->call(PermissionSeeder::class);
+        $this->call(PermissionSeeder::class);
         
-        //$this->call(RoleSeeder::class);
+        $this->call(RoleSeeder::class);
 
         $this->call(UserSeeder::class);
 

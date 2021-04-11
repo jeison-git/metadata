@@ -11,6 +11,8 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
+use Spatie\Permission\Traits\HasRoles;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -19,6 +21,7 @@ class User extends Authenticatable
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -59,9 +62,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-     //metodo uno a uno (usarios a perfil)
+    //metodo uno a uno (usarios a perfil)
 
-     public function profile(){
+    public function profile(){
 
         return $this->hasOne('App\Models\Profile');
 
@@ -74,7 +77,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Course');
         
     }
-
+    
     //relacion muchos a muchos (los estudiantes tienen muchos cursos)
 
     public function courses_enrolled(){
