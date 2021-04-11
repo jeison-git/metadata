@@ -21,6 +21,10 @@ module.exports = {
             opacity: ['disabled'],
         },
     },
+    
+    corePlugins: {
+        container: false,
+    },
 
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
