@@ -26,11 +26,11 @@ class Course extends Model
             return $query->where('level_id', $level_id);
         }
     }
-    public function scopeDay($query, $day_id){
+    /*public function scopeDay($query, $day_id){
         if($day_id){
             return $query->where('day_id', $day_id);
         }
-    }
+    }*/
     
     public function getRouteKeyName()
     {
