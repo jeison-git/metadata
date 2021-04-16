@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Day;
 use App\Models\Level;
 use App\Models\Price;
 use App\Models\Requirement;
@@ -39,7 +40,8 @@ class CourseFactory extends Factory
             'description' => $this->faker->paragraph(),
             'status'      => $this->faker->randomElement([Course::BORRADOR, Course::REVISION, Course::PUBLICADO]),
             'slug'        => Str::slug($title),
-            'user_id'     => $this->faker->randomElement([1, 2, 3, 4, 5]),
+            'user_id'     => $this->faker->randomElement([1, 2, 3]),
+            'day_id'      => Day::all()->random()->id,
             'level_id'    => Level::all()->random()->id,
             'category_id' => Category::all()->random()->id,
             'price_id'    => Price::all()->random()->id,       

@@ -62,7 +62,7 @@ class CourseController extends Controller
             'title' => 'required',
             'slug' => 'required|unique:courses',            
             'subtitle' => 'required',
-            'hour' => 'required',
+            //'hour' => 'required',
             'description' => 'required',
             'file' => 'image'            
         ]);
@@ -126,7 +126,7 @@ class CourseController extends Controller
             'title' => 'required',
          // 'slug' => 'required|unique:courses,slug,' .$course->id,            
             'subtitle' => 'required',
-            'hour' => 'required',
+            //'hour' => 'required',
             'description' => 'required',
             'file' => 'image'            
         ]);
@@ -168,6 +168,13 @@ class CourseController extends Controller
         $this->authorize('dicatated', $course);
 
         return view('instructor.courses.goals', compact('course'));
+    }
+
+    public function objectives(Course $course){
+
+        $this->authorize('dicatated', $course);
+
+        return view('instructor.courses.objectives', compact('course'));
     }
 
     public function status(Course $course){

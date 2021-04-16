@@ -9,6 +9,7 @@ use App\Models\Goal;
 use App\Models\Image;
 use App\Models\Lesson;
 use App\Models\Objective;
+use App\Models\SpecificObjective;
 use App\Models\Requirement;
 use App\Models\Section;
 use Illuminate\Database\Seeder;
@@ -45,6 +46,9 @@ class CourseSeeder extends Seeder
                    'course_id' => $course->id
             ]);
             Objective::factory(4)->create([
+                   'course_id' => $course->id
+            ]);
+            SpecificObjective::factory(4)->create([
                    'course_id' => $course->id
             ]);
 

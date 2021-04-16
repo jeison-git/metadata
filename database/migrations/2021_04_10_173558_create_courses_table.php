@@ -26,12 +26,14 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('level_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->unsignedBigInteger('price_id')->nullable();
+            $table->unsignedBigInteger('price_id')->nullable();            
+            $table->unsignedBigInteger('day_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('level_id')->references('id')->on('levels')->onDelete('set null');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
-            $table->foreign('price_id')->references('id')->on('prices')->onDelete('set null');
+            $table->foreign('price_id')->references('id')->on('prices')->onDelete('set null');            
+            $table->foreign('day_id')->references('id')->on('days')->onDelete('set null');
 
             $table->timestamps();
         });

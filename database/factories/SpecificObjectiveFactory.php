@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Objective;
+use App\Models\SpecificObjective;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ObjectiveFactory extends Factory
+class SpecificObjectiveFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Objective::class;
+    protected $model = SpecificObjective::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,7 @@ class ObjectiveFactory extends Factory
     public function definition()
     {
         return [
-            'general'  => $this->faker->sentence()
+            'specific'  => $this->faker->sentence()
         ];
     }
 }

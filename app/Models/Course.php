@@ -72,6 +72,11 @@ class Course extends Model
         return $this->hasMany('App\Models\Objective');
 
     }
+    public function specific_objectives(){
+
+        return $this->hasMany('App\Models\SpecificObjective');
+
+    }
     //relacion uno a muchos inversa (muchos cursos son de un profesor)
     public function teacher(){
 

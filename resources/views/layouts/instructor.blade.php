@@ -36,13 +36,17 @@
                         <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.edit', $course) border-blue-500 @else border-transparent @endif pl-2">
                             <a href="{{Route('instructor.courses.edit', $course)}}">Información del curso</a>
                         </li>
+
+                        <li class="leading-7 mb-1 border-l-4  @routeIs('instructor.courses.objectives', $course) border-blue-500 @else border-transparent @endif pl-2">
+                            <a href="{{Route('instructor.courses.objectives', $course)}}">Objetivos del curso</a>
+                        </li>
         
                         <li class="leading-7 mb-1 border-l-4  @routeIs('instructor.courses.curriculum', $course) border-blue-500 @else border-transparent @endif pl-2">
-                            <a href="{{Route('instructor.courses.curriculum', $course)}}">Lecciones del curso</a>
+                            <a href="{{Route('instructor.courses.curriculum', $course)}}">Desarrollo del curso</a>
                         </li>
         
                         <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.goals', $course) border-blue-500 @else border-transparent @endif pl-2">
-                            <a href="{{Route('instructor.courses.goals', $course)}}">Metas del curso</a>
+                            <a href="{{Route('instructor.courses.goals', $course)}}">Punto de partida del curso</a>
                         </li>
 
                         {{--@if ($course->observation)
