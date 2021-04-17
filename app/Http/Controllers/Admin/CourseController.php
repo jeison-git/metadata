@@ -37,9 +37,10 @@ class CourseController extends Controller
        $course->save();
 
        //Envio de correos
-      // $mail = new ApprovedCourse($course);
+      $mail = new ApprovedCourse($course);
 
-      // Mail::to($course->teacher->email)->queue($mail);
+      //Mail::to($course->teacher->email)->queue($mail);
+      Mail::to($course->teacher->email)->send($mail);
 
        return redirect()->route('admin.courses.index')->with('info', 'El curso se publicó con éxito');
     }
@@ -60,8 +61,9 @@ class CourseController extends Controller
         $course->save();
 
         //Envio de correos
-       // $mail = new RejectCourse($course);
+        $mail = new RejectCourse($course);
        // Mail::to($course->teacher->email)->queue($mail);
+       Mail::to($course->teacher->email)->send($mail);
 
         return redirect()->route('admin.courses.index')->with('info', 'El curso se descarto con éxito');
     }

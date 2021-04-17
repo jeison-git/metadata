@@ -49,11 +49,11 @@
                             <a href="{{Route('instructor.courses.goals', $course)}}">Punto de partida del curso</a>
                         </li>
 
-                        {{--@if ($course->observation)
+                        @if ($course->observation){{--ojo este es el componente Observer--}}
                             <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.observation', $course) border-blue-500 @else border-transparent @endif pl-2">
                                 <a href="{{Route('instructor.courses.observation', $course)}}">Observaciones</a>
                             </li>
-                        @endif  ojo este es el componente Observer--}}
+                        @endif  
 
                     </ul>
 
