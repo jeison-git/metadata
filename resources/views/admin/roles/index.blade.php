@@ -19,7 +19,7 @@
     <div class="card">
         
         <div class="card-header">
-            <a href="{{route('admin.roles.create')}}">Crear rol</a>
+            <a class="btn btn-primary" href="{{route('admin.roles.create')}}">Crear rol</a>
         </div>
 
         <div class="card-body">
@@ -40,7 +40,7 @@
                             <td>{{$role->name}}</td>
 
                             <td width="10px">
-                                <a class="btn btn-secondary" href="{{route('admin.roles.edit',$role)}}">Editar</a>
+                                <a class="btn btn-primary" href="{{route('admin.roles.edit',$role)}}">Editar</a>
                             </td>
                             
                             <td width="10px">

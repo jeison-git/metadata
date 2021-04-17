@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class InstructorLayout extends Component
 {
-    public $course;
+    public $course;//propiedad la cual se le asignara al constructor para poder ser utilizadad esde la vista
 
     /**
      * Create a new component instance.

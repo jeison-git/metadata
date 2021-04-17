@@ -1,5 +1,5 @@
 <section>
-    <h1 class="text-2xl font-bold">REQUERIMIENTOS DE CONOCIMIENTOS PREVIOS DEL CURSO</h1>
+    <h1 class="text-2xl font-bold">REQUERIMIENTOS DE CONOCIMIENTOS PREVIOS O HERRAMIENTAS DEL CURSO</h1>
     <hr class="mt-2 mb-6">
 
     @foreach ($course->requirements as $item)
