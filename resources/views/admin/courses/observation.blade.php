@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Observation')
 
 @section('content_header')
     <h1 class="">Observaciones del curso: {{$course->title}}</h1>

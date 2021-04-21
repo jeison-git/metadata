@@ -49,37 +49,7 @@
                                     </div>
                                 </div>
                             </td>
-                            {{-- este es la seccion de alumnos matriculados y valoración
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900 ml-10 fas fa-users">{{$course->students->count()}}</div>
-                                <div class="text-sm text-gray-500">Alumnos matriculados</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900 flex items-center">
-                                        {{$course->rating}}
-                                    <ul class="flex text-sm ml-2">
-                                        <li class="mr-1">
-                                            <i class="fas fa-star text-{{$course->rating >=1 ? 'yellow' : 'gray'}}-400"></i>
-                                        </li>
-                                        <li class="mr-1">
-                                            <i class="fas fa-star text-{{$course->rating >=2 ? 'yellow' : 'gray'}}-400"></i>
-                                        </li>
-                                        <li class="mr-1">
-                                            <i class="fas fa-star text-{{$course->rating >=3 ? 'yellow' : 'gray'}}-400"></i>
-                                        </li>
-                                        <li class="mr-1">
-                                            <i class="fas fa-star text-{{$course->rating >=4 ? 'yellow' : 'gray'}}-400"></i>
-                                        </li>
-                                        <li class="mr-1">
-                                            <i class="fas fa-star text-{{$course->rating >=5 ? 'yellow' : 'gray'}}-400"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="text-sm text-gray-500">Valoración del curso</div>
-
-                            </td>
-                                --}}
+                            
                             <td class="px-6 py-4 whitespace-nowrap">{{-- Estado del curso si es aprobado o no --}}
 
                                 @switch($course->status)

@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use App\Models\Profile;
+use App\Models\User;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -38,6 +40,30 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ])->save();
         }
     }
+
+    /*public function updateprofile($profile, array $input)
+    {
+
+        Validator::make($input,[
+            'title' => ['required', 'string', 'max:255'],
+            'biography' => ['required', 'string', 'max:255'],          
+            'website' => ['required', 'string', 'max:255'],
+            'facebook' => ['required', 'string', 'max:255'],
+            'linkedin' => ['required', 'string', 'max:255'],
+            'youtobe' => ['required', 'string', 'max:255'],            
+        ]);
+
+        $profile->forceFill([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'title' => $input['title'],
+            'biography' => $input['biography'],
+            'website' => $input['website'],
+            'facebook' => $input['facebook'],
+            'linkedin' => $input['linkedin'],
+            'youtobe' => $input['youtobe'],
+        ])->save();
+    }*/
 
     /**
      * Update the given verified user's profile information.

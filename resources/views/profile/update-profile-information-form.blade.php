@@ -27,18 +27,18 @@
                 <x-jet-label for="photo" value="{{ __('Photo') }}" />
 
                 <!-- Current Profile Photo -->
-                <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded-full h-20 w-20 object-cover">
+                <div class="flex-1 flex flex-col mt-2" x-show="! photoPreview">
+                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded-full h-36 w-36 object-cover">
                 </div>
 
                 <!-- New Profile Photo Preview -->
-                <div class="mt-2" x-show="photoPreview">
-                    <span class="block rounded-full w-20 h-20"
+                <div class="flex-1 flex flex-col mt-2" x-show="photoPreview">
+                    <span class="block rounded-full w-36 h-36"
                           x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'">
                     </span>
                 </div>
 
-                <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                <x-jet-secondary-button class="mt-2" type="button" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Select A New Photo') }}
                 </x-jet-secondary-button>
 
@@ -51,7 +51,7 @@
                 <x-jet-input-error for="photo" class="mt-2" />
             </div>
         @endif
-
+          
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -65,6 +65,49 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+       {{-- <!-- title -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="title" value="{{ __('Title') }}" />
+            <x-jet-input id="title" type="text" class="mt-1 block w-full" wire:model.defer="state.title" />
+            <x-jet-input-error for="title" class="mt-2" />
+        </div>
+
+        <!-- biography -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="biography" value="{{ __('Biography') }}" />
+            <x-jet-input id="biography" type="text" class="mt-1 block w-full" wire:model.defer="state.biography" />
+            <x-jet-input-error for="biography" class="mt-2" />
+        </div>
+
+        <!-- website -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="website" value="{{ __('Website') }}" />
+            <x-jet-input id="website" type="text" class="mt-1 block w-full" wire:model.defer="state.website" />
+            <x-jet-input-error for="website" class="mt-2" />
+        </div>
+
+        <!-- facebook -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="facebook" value="{{ __('Facebook') }}" />
+            <x-jet-input id="facebook" type="text" class="mt-1 block w-full" wire:model.defer="state.facebook" />
+            <x-jet-input-error for="facebook" class="mt-2" />
+        </div>
+
+        <!-- linkedin -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="linkedin" value="{{ __('LinkedIn') }}" />
+            <x-jet-input id="linkedin" type="text" class="mt-1 block w-full" wire:model.defer="state.linkedin" />
+            <x-jet-input-error for="linkedin" class="mt-2" />
+        </div>
+
+        <!-- youtobe -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="youtobe" value="{{ __('YouTube') }}" />
+            <x-jet-input id="youtobe" type="text" class="mt-1 block w-full" wire:model.defer="state.youtobe" />
+            <x-jet-input-error for="youtobe" class="mt-2" />
+        </div>--}}
+
     </x-slot>
 
     <x-slot name="actions">

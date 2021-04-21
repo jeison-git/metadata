@@ -95,6 +95,9 @@ class Course extends Model
     public function day(){
         return $this->belongsTo('App\Models\Day');
     }
+    //public function hour(){
+    //    return $this->belongsTo('App\Models\Hour');
+   // }
 
     //relacion muchos a muchos (usuarios tienen muchos cursos)
   

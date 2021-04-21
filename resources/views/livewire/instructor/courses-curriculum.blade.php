@@ -22,7 +22,7 @@
 
                     @else  
                         <header class="flex justify-between items-center">
-                            <h1 x-on:click="open = !open" class="cursor-pointer"><strong>Unidad:</strong>{{$item->name}}</h1>
+                            <h1 x-on:click="open = !open" class="cursor-pointer"><strong>Unidad: </strong>{{$item->name}}</h1>
 
                             <div>
                                 <i class="fas fa-edit cursor-pointer text-blue-500" wire:click="edit({{$item}})"></i>

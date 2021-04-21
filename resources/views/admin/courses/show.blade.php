@@ -15,10 +15,12 @@
                 <h1 class="text-4xl">{{$course->title}}</h1>
                 <h2 class="text-xl mb-3">{{$course->subtitle}}</h2>
                 <p class="mb-2"><i class="fas fa-calendar-alt"></i> Fecha de creación: {{$course->created_at}}</p>
-                <p class="mb-2"><i class="fas fa-chart-line"></i> Nivel: {{$course->level->name}}</p>
                 <p class="mb-2"><i class="fas fa-tag"></i> Categoria: {{$course->category->name}}</p>
+                <p class="mb-2"><i class="fas fa-chart-line"></i> Nivel: {{$course->level->name}}</p>
+                <p class="mb-2"><i class="fas fa-dollar-sign"></i> Precio: {{$course->price->name}}</p>
                 <p class="mb-2"><i class="fas fa-eye"></i> Estado: {{$course->status}} Revisíon</p>                
                 <p class="mb-2"><i class="fas fa-laptop"></i> Dia disponible para conferencia: {{$course->day->name}}</p>
+                <p class="mb-2"><i class="fas fa-clock"></i> Hora disponible para conferencia: {{$course->hour}}</p>
             </div>
         </div>
     </section>

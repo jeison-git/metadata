@@ -9,7 +9,6 @@ use App\Models\Course;
 use App\Models\Level;
 use App\Models\Price;
 use App\Models\Day;
-use App\Models\Observation;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -23,8 +22,7 @@ class CourseController extends Controller
         $this->middleware('can:Actualizar cursos')->only('edit', 'update', 'goals');
         $this->middleware('can:Eliminar cursos')->only('destroy');
     }
-
-
+    
     /**
      * Display a listing of the resource.
      *
@@ -62,11 +60,11 @@ class CourseController extends Controller
             'title' => 'required',
             'slug' => 'required|unique:courses',            
             'subtitle' => 'required',
-            //'hour' => 'required',
+            'hour' => 'required',
             'description' => 'required',
             'file' => 'image'            
         ]);
-        
+
         $course = Course::create($request->all());
 
         if($request->file('file')){
@@ -105,8 +103,8 @@ class CourseController extends Controller
         $categories = Category::pluck('name', 'id');
         $levels = Level::pluck('name', 'id');
         $prices = Price::pluck('name', 'id');
-        $days   = Day::pluck('name', 'id');
-
+        $days   = Day::pluck('name', 'id');  
+        
         return view('instructor.courses.edit', compact('course', 'categories', 'levels', 'prices', 'days'));
     }
 
@@ -126,7 +124,7 @@ class CourseController extends Controller
             'title' => 'required',
          // 'slug' => 'required|unique:courses,slug,' .$course->id,            
             'subtitle' => 'required',
-            //'hour' => 'required',
+            'hour' => 'required',
             'description' => 'required',
             'file' => 'image'            
         ]);

@@ -28,11 +28,12 @@
 
 </div>
 
-<div class="grid grid-cols-2 gap-4">
 
-    <div>
-        {!! Form::label('name', 'Dia disponible para dictar conferencia virtual') !!}
-        {!! Form::select('name', $days, null, ['class' => 'form-input block w-full mt-1']) !!}
+
+<div class="grid grid-cols-2 gap-4">
+        <div>
+        {!! Form::label('day_id', 'Dia disponible para dictar conferencia virtual') !!}
+        {!! Form::select('day_id', $days, null, ['class' => 'form-input block w-full mt-1']) !!}
     </div>
 
     <div>
@@ -43,7 +44,6 @@
         <strong class="text-xs text-red-600">{{$message}}</strong>
     @enderror    
     </div>
-
 </div>
 
 <div class="my-4">
