@@ -77,8 +77,15 @@ _9. El siguiente comando a ejecutar llenara con datos de prueba la base de datos
 ```
 php artisan migrate:fresh --seed
 ```
+_10. Luego de haber realizado el paso anterior, puedo ir al navegador para comenzar a utilizar el proyecto; Iniciando sesión con el usuario administrador:_
+```
+username: jeison.a.r.2013@gmail.com
+```
+```
+password: 12345678
+```
 
-_10. Ir a localhost y ver el proyecto_
+_11. Ir a localhost y ver el proyecto_
 
 
 ## Este proyecto todavia se encuentra en proceso de elaboración. 🖇️
