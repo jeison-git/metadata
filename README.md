@@ -54,19 +54,19 @@ De forma predeterminada, el nombre de usuario es root y puede dejar el campo de 
 ```
 Nota: " Dicho archivo de configuracion .env, se lo enviare por correo, para que pueda utilizarlo para mayor comodidad."
 ```
-_6. Desde consola jecutar el comando:  npm install (debe tener instalado Node.js)._
+_6. Desde consola ejecutar el comando:  npm install (debe tener instalado Node.js)._
 
 ```
 npm install
 ```
 
-_7. Generar APP_KEY, La APP_KEY es una cadena de carácteres generada aleatoriamente por Laravel que utiliza para todas las cookies cifradas, como las cookies de sesión. Para generar la APP_KEY del proyecto ejecuta el siguiente comando:_
+_7. Generar APP_KEY, La APP_KEY es una cadena de carácteres generada aleatoriamente por Laravel que se utiliza para todas las cookies cifradas, como las cookies de sesión. Para generar la APP_KEY del proyecto ejecutar el siguiente comando:_
 
 ```
  php artisan key:generate
 ```
 
-_8. Desde consola jecutar el comando: php artisan migrate (Para crear todas las tablas y relaciones del proyecto, dentro de la bases de datos que creo y espesifico en el archivo .env)._
+_8. Desde consola ejecutar el comando: php artisan migrate (Para crear todas las tablas y relaciones del proyecto, dentro de la bases de datos que creo y espesífico en el archivo .env)._
 
 ```
 php artisan migrate
