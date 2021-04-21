@@ -71,13 +71,18 @@ _8. Desde consola ejecutar el comando: php artisan migrate (Para crear todas las
 ```
 php artisan migrate
 ```
+_9. El siguiente paso es dirigirse al directorio "storage\app\public" y crear dos carpetas, una llamada " cursos " y la otra " resources ". Luego ejecutar el siguiente comando que creara los enlaces o links simbolicos entre storage y public:_
 
-_9. El siguiente comando a ejecutar llenara con datos de prueba la base de datos del proyecto (La mayoria de los datos de prueba son importantes, ya que estos le ahorrarian tiempo, evitando tener que llenar los crub manualmente). Ejecute:_
+```
+php artisan storage:link
+```
+
+_10. El siguiente comando a ejecutar llenara con datos de prueba la base de datos del proyecto (La mayoria de los datos de prueba son importantes, ya que estos le ahorrarian tiempo, evitando tener que llenar los crub manualmente). Ejecute:_
 
 ```
 php artisan migrate:fresh --seed
 ```
-_10. Luego de haber realizado el paso anterior, puedo ir al navegador para comenzar a utilizar el proyecto; Iniciando sesión con el usuario administrador:_
+_11. Luego de haber realizado el paso anterior, puedo ir al navegador para comenzar a utilizar el proyecto; Iniciando sesión con el usuario administrador:_
 ```
 username: jeison.a.r.2013@gmail.com
 ```
@@ -85,7 +90,7 @@ username: jeison.a.r.2013@gmail.com
 password: 12345678
 ```
 
-_11. Ir a localhost y ver el proyecto_
+_12. Ir a localhost y ver el proyecto_
 
 
 ## Este proyecto todavia se encuentra en proceso de elaboración. 🖇️
