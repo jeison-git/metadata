@@ -92,6 +92,10 @@ password: 12345678
 
 _12. Ir a localhost y ver el proyecto_
 
+### Screenshots
+
+![gif-metadata](https://user-images.githubusercontent.com/64772320/115641406-05992600-a2e7-11eb-999d-a5eaa0199c63.gif)
+
 
 ## Este proyecto todavia se encuentra en proceso de elaboración. 🖇️
 
