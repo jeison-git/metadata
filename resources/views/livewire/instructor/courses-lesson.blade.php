@@ -58,7 +58,7 @@
                         <hr class="my-2">
 
                             <p class="text-sm">Tema: {{$item->name}}</p>
-                            <p class="text-sm">Desarrollo: {!! $item->contents !!} </p>
+                            <p class="text-sm">Desarrollo: {!! Str::limit($item->contents) !!} </p>
                        
                         <div class="my-2">
                             <button class="btn btn-primary text-sm" wire:click="edit({{$item}})">Editar</button>

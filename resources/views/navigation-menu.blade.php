@@ -5,6 +5,16 @@
             'route'  => route('home'),
             'active' => request()->routeIs('home')
         ],
+        [
+            'name'   => 'Acerca de',
+            'route'  => route('about'),
+            'active' => request()->routeIs('about')
+        ],
+        [
+            'name'   => 'Contactanos',
+            'route'  => route('contact.index'),
+            'active' => request()->routeIs('contact.index')
+        ],
        
     ];
 

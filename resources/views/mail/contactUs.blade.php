@@ -295,7 +295,7 @@ ul.social li{
           	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
           		<tr>
           			<td class="logo" style="text-align: center;">
-			            <h1><a>Curso Aprobado</a></h1>
+			            <h1><a>Alguien quiere comentarle alguna información</a></h1>
 			          </td>
           		</tr>
           	</table>
@@ -306,21 +306,13 @@ ul.social li{
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
             	<tr>
             		<td style="padding: 0 2.5em; text-align: center; padding-bottom: 3em;">
-            			<div class="text">
-            				<h3> Le notificamos que su curso <strong> {{$course->title}} </strong> ha sido revisado minuciosamente y queremos hacerle saber que nos parecio un excelente trabajo.</h3>
+            			<div class="text text-gray-900">
+                             <h3><strong>Nombre: </strong>{{$contacto['name']}}</h3>
+                             <h3><strong>Correo: </strong>{{$contacto['email']}}</h3>
+                             <h3><strong>Mensaje: </strong>{{$contacto['message']}}</h3>
             			</div>
             		</td>
             	</tr>
-            	<tr>
-			          <td style="text-align: center;">
-			          	<div class="text-author">
-				          	<img src="{{ $course->teacher->profile_photo_url }}" alt="" style="width: 100px; max-width: 600px; height: auto; margin: auto; display: block;">
-				          	<h2 class="name">{{$course->teacher->name}}</h2>
-				          	<!-- <span class="position"> De parte CEO, Founder at MetaData</span>-->
-				           	<p><a  class="btn btn-primary">Su curso fue aprobado!</a></p>
-			           	</div>
-			          </td>
-			        </tr>
             </table>
           </td>
 	      </tr><!-- end tr -->
