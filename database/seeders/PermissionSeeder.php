@@ -54,6 +54,10 @@ class PermissionSeeder extends Seeder
         ]);
 
         Permission::create([
+            'name' => 'Eliminar usuarios',
+        ]);
+
+        Permission::create([
             'name' => 'Ver dashboard',
         ]);
     }

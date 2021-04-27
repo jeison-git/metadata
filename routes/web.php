@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Livewire\CourseStatus;
+use App\Http\Controllers\ContactUsController;
 
 
 /*
@@ -18,5 +17,15 @@ use App\Http\Livewire\CourseStatus;
 */
 
 Route::get('/', HomeController::class)->name('home');
+
+Route::view('about', 'about')->name('about');
+
+Route::view('privacy', 'privacy')->name('privacy');
+
+Route::view('termms', 'termms')->name('termms');
+
+Route::get('contact', [ContactUSController::class, 'index'])->name('contact.index');
+
+Route::post('contact', [ContactUSController::class, 'store'])->name('contact.store');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () { return view('dashboard'); })->name('dashboard');

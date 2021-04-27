@@ -14,7 +14,7 @@ class UserController extends Controller
         $this->middleware('can:Leer usuarios')->only('index');        
         $this->middleware('can:Editar usuarios')->only('edit', 'update');
        // $this->middleware('can:Crear usuarios')->only('create', 'store');
-       // $this->middleware('can:Eliminar usuarios')->only('destroy');
+        $this->middleware('can:Eliminar usuarios')->only('destroy');
     }
 
     /**
@@ -52,6 +52,13 @@ class UserController extends Controller
         $user->roles()->sync($request->roles);
 
         return redirect()->route('admin.users.edit', $user);
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('admin.users.index')->with('info', 'El usuario se elimino con éxito');
     }
 
   

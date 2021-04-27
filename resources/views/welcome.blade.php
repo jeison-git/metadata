@@ -1,5 +1,5 @@
 <x-app-layout>
-    {{-- portaday Busqueda --}}
+    {{-- portaday Busqueda
     <section class="bg-cover" style="background-image: url({{asset('img/home/home.jpg')}})">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
                 <div class="w-full text-center md:w-3/4 lg:w-1/2">
@@ -8,7 +8,7 @@
                 </div>
             </div>
     </section>
-        {{-- Tabla de contenidos y breve descripcion editar estilo de bordes please--}}
+        {{-- Tabla de contenidos y breve descripcion editar estilo de bordes please
     <section class="mt-24">
         <h1 class=" text-center text-black text-3xl mb-6">CONTENIDO</h1>
 
@@ -56,7 +56,7 @@
             </div>
 
     </section> 
-        {{-- tabla de  catalogos de cursos--}}  
+        {{-- tabla de  catalogos de cursos 
     <section class="mt-24 bg-gray-400  shadow-lg py-12">
            <h1 class=" text-center text-black text-3xl mb-2">¿Por donde comenzar?</h1>
              <p class="text-center text-black">Después de verificar tu registro solo debes seguir compartiendo tus conocimientos.</p>
@@ -65,21 +65,68 @@
               <a href="{{route('courses.index')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Catalogo de cursos
               </a>
-           </div>--}}
-    </section>
+           </div>
+    </section>--}}
+    <!-- home content -->
+		<div class="w-full px-6 py-12 bg-white">
+			<div class="container max-w-4xl mx-auto text-center pb-10 py-8">
+				
+				<h3 class="text-xl md:text-3xl leading-tight text-center max-w-md mx-auto text-gray-900 mb-8">
+					Sin ti no podremos impulsar la educación hacia adelante
+				</h3>
+                <p class="text-black font-semibold text-xl mb-8">Proporciona soluciones digitales que complementen el aprendizaje del alumno.</p>
 
-        {{-- Seccion de ultimos cursos agregados
-    <section class="my-24">
-        <h1 class="text-center text-3xl text-black mb-2"> Actividaes Recientes</h1>
-        <p class="text-center text-gray-600 text-sm mb-6">Refuerza tus Habilidaes de concentracion para que termines tus cursos</p>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+			</div>
 
-             @foreach ($courses as $course)             
-             <x-course-card :course="$course" />                
-            @endforeach          
-        </div>
-    </section>
-     --}}
+			<div class="container max-w-4xl mx-auto text-center flex flex-wrap items-start md:flex-no-wrap">
+				
+				<div class="my-4 w-full md:w-1/3 flex flex-col items-center justify-center px-4">
+					<img src="{{asset('img/home/Contenido01.jpg')}}" class="w-full h-64 object-cover mb-6" />
 
+					<h2 class="text-2xl leading-tight mb-2">Soluciones digitales</h2>
+					<p class="mt-3 mx-auto text-lg leading-normal">Ofrece soluciones Tic, que impulse la enseñanza y el aprendizaje de nuevos contenidos educativos de calidad.</p>
+				</div>
+				
+				<div class="my-4 w-full md:w-1/3 flex flex-col items-center justify-center px-4">
+					<img src="{{asset('img/home/Contenido02.jpg')}}" class="w-full h-64 object-cover mb-6" />
+
+					<h2 class="text-2xl leading-tight mb-2">Desde tu espacio de trabajo</h2>
+					<p class="mt-3 mx-auto text-lg leading-normal">Es hora de dar un pasó adelante y adaptarse, a la nueva realidad de la educación del siglo XXI.</p>
+				</div>
+				
+				<div class="my-4 w-full md:w-1/3 flex flex-col items-center justify-center px-4">
+					<img src="{{asset('img/home/Contenido03.jpg')}}" class="w-full h-64 object-cover mb-6" />
+
+					<h2 class="text-2xl leading-tight mb-2">Mejora tus contenidos educativos</h2>
+					<p class="mt-3 mx-auto text-lg leading-normal">Utiliza los beneficios de esta plataforma para crear contenido creativo e innovador en colaboración con expertos.</p>
+				</div>
+
+			</div>
+		</div>
+		<!-- /home content -->
+
+		<!-- about -->
+		<div class="w-full px-6 py-12 text-left bg-gray-300 text-gray-800 leading-normal">
+			<div class="container max-w-4xl mx-auto flex justify-center flex-wrap md:flex-no-wrap">
+				<div class="w-full md:w-1-3">
+					<h3 class="text-3xl mb-4 text-black leading-tight">
+						Participa activamente.
+					</h3>
+					
+					<p class="mb-2 text-justify text-lg">Juntos crearemos contenidos educativos orientados a la capacitación y actualización de conocimientos, 
+                        que proporcionen soluciones digitales que complementen el aprendizaje del alumno.</p>
+					<p class="mb-2 text-justify text-lg">Necesitamos realizar un esfuerzo conjunto para que la comunidad reconozca que los profesores, 
+                        en todos los niveles educativos, son los responsables de proporcionar la mayor parte de la docencia en las universidades, 
+                        y deberían ser reconocidos e incentivados para que sigan dando lo mejor de sí en la noble tarea de la enseñanza.</p>
+				</div>
+				<div class="w-full md:w-2-3 pt-10 md:px-6 md:pt-0 my-8">
+					<img src="{{asset('img/home/Contenido04.jpg')}}" class="w-full h-auto" />
+				</div>                
+
+                <a href="{{ route('register') }}" class="bg-black text-white px-4 py-2 no-underline">Registrate y comienza a crear contenido</a>
+
+			</div>
+
+		</div>
+		<!-- /about -->
 </x-app-layout>
