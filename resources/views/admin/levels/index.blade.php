@@ -4,21 +4,21 @@
 
 @section('content_header')
 
-    <a class="btn btn-primary float-right" href="{{route('admin.levels.create')}}">Crear nivel</a>
+    <a class="float-right btn btn-primary" href="{{ route('admin.levels.create') }}">Crear nivel</a>
 
-    <h1>Lista de niveles</h1>
+    <h1>Lista de niveles de dificultad</h1>
 @stop
 
 @section('content')
 
     @if (session('info'))
         <div class="alert alert-primary">
-            {{session('info')}}
-        </div>        
+            {{ session('info') }}
+        </div>
     @endif
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -31,26 +31,26 @@
                     @foreach ($levels as $level)
                         <tr>
                             <td>
-                                {{$level->id}}
+                                {{ $level->id }}
                             </td>
                             <td>
-                                {{$level->name}}
+                                {{ $level->name }}
                             </td>
 
                             <td width="10px">
-                                <a class="btn btn-primary" href="{{route('admin.levels.edit', $level)}}">Editar</a>
+                                <a class="btn btn-primary" href="{{ route('admin.levels.edit', $level) }}">Editar</a>
                             </td>
 
                             <td width=10px>
-                                <form action="{{route('admin.levels.destroy', $level)}}" method="POST">
+                                <form action="{{ route('admin.levels.destroy', $level) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
 
                                     <button class="btn btn-danger" type="submit">Eliminar</button>
 
                                 </form>
-                            </td>    
-                        </tr>                        
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
 
@@ -64,5 +64,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+    </script>
 @stop

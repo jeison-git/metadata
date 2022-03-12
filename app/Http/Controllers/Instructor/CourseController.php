@@ -22,7 +22,7 @@ class CourseController extends Controller
         $this->middleware('can:Actualizar cursos')->only('edit', 'update', 'goals');
         $this->middleware('can:Eliminar cursos')->only('destroy');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -58,24 +58,24 @@ class CourseController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:courses',            
-            'subtitle' => 'required',
-            'hour' => 'required',
+            'slug'  => 'required|unique:courses',
+            'subtitle'    => 'required',
+            'hour'        => 'required',
             'description' => 'required',
-            'file' => 'image'            
+            'file'        => 'required|image|max:2048'
         ]);
 
         $course = Course::create($request->all());
 
-        if($request->file('file')){
-            $url = Storage::put('public/cursos/', $request->file('file'));
-           
+        if ($request->file('file')) {
+            $url = Storage::put('cursos', $request->file('file'));
+
             $course->image()->create([
                 'url' => $url
-            ]);    
-        }  
+            ]);
+        }
 
-        return redirect()->route('instructor.courses.edit', $course);            
+        return redirect()->route('instructor.courses.edit', $course);
     }
 
     /**
@@ -103,8 +103,8 @@ class CourseController extends Controller
         $categories = Category::pluck('name', 'id');
         $levels = Level::pluck('name', 'id');
         $prices = Price::pluck('name', 'id');
-        $days   = Day::pluck('name', 'id');  
-        
+        $days   = Day::pluck('name', 'id');
+
         return view('instructor.courses.edit', compact('course', 'categories', 'levels', 'prices', 'days'));
     }
 
@@ -121,32 +121,32 @@ class CourseController extends Controller
         $this->authorize('dicatated', $course);
 
         $request->validate([
-            'title' => 'required',
-         // 'slug' => 'required|unique:courses,slug,' .$course->id,            
-            'subtitle' => 'required',
-            'hour' => 'required',
+            'title'       => 'required',
+            // 'slug' => 'required|unique:courses,slug,' .$course->id,
+            'subtitle'    => 'required',
+            'hour'        => 'required',
             'description' => 'required',
-            'file' => 'image'            
+            'file'        => 'nullable|image|max:2048'
         ]);
 
         $course->update($request->all());
 
-        if($request->file('file')){
-            $url = Storage::put('public/cursos/', $request->file('file'));
-       
-            if($course->image){
+        if ($request->file('file')) {
+            $url = Storage::put('cursos', $request->file('file'));
+
+            if ($course->image) {
                 Storage::delete($course->image->url);
-                 
+
                 $course->image->update([
                     'url' => $url
                 ]);
-            }else{
+            } else {
                 $course->image()->create([
-                    'url' => $url 
+                    'url' => $url
                 ]);
             }
         }
-            
+
         return redirect()->route('instructor.courses.edit', $course);
     }
 
@@ -161,33 +161,36 @@ class CourseController extends Controller
         //
     }
 
-    public function goals(Course $course){
+    public function goals(Course $course)
+    {
 
         $this->authorize('dicatated', $course);
 
         return view('instructor.courses.goals', compact('course'));
     }
 
-    public function objectives(Course $course){
+    public function objectives(Course $course)
+    {
 
         $this->authorize('dicatated', $course);
 
         return view('instructor.courses.objectives', compact('course'));
     }
 
-    public function status(Course $course){
+    public function status(Course $course)
+    {
         $course->status = 2;
         $course->save();
 
-        if($course->observation){
+        if ($course->observation) {
             $course->observation->delete();
         }
-        
+
         return redirect()->route('instructor.courses.edit', $course);
     }
 
-        public function observation(Course $course){
-            return view('instructor.courses.observation', compact('course'));
-        }
-
+    public function observation(Course $course)
+    {
+        return view('instructor.courses.observation', compact('course'));
+    }
 }

@@ -234,21 +234,21 @@ return [
             'route'   => 'admin.home',
             'icon'    => 'fas fa-fw fa-home',
             'can'     => 'Ver dashboard'
-            
+
         ],
         [
             'text'    => 'Lista de roles',
             'route'   => 'admin.roles.index',
             'icon'    => 'fas fa-fw fa-users-cog',
             'can'     => 'Listar role'  ,
-            'active'  =>  ['admin/roles*'],            
+            'active'  =>  ['admin/roles*'],
         ],
         [
             'text'    => 'Usuarios',
             'route'   => 'admin.users.index',
             'icon'    => 'fas fa-fw fa-users',
             'can'     => 'Leer usuarios'  ,
-            'active'  =>  ['admin/users*'],            
+            'active'  =>  ['admin/users*'],
         ],
         ['header' => 'OPCIONES DE CURSOS'],
         [
@@ -270,6 +270,13 @@ return [
             'text' => 'Cursos por aprobar',
             'route'  => 'admin.courses.index',
             'icon' => 'fas fa-fw fa-share',
+        ],
+        ['header' => 'RESPONDER LOS MENSAJES'],
+        [
+            'text' => 'Centro de Ayuda',
+            'route'  => 'admin.contacts.index',
+            'icon' => 'fab fa-fw fa fa-comments',
+
         ],
     ],
 

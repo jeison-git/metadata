@@ -4,41 +4,41 @@
 
 @section('content_header')
 
-    <a class="btn btn-primary float-right" href="{{route('admin.prices.create')}}">Agregar precio</a>
+    <a class="float-right btn btn-primary" href="{{ route('admin.prices.create') }}">Agregar precio</a>
 
-    <h1>Lista de precios</h1>
+    <h1>Lista de ¿a quien va dirigido? | agregar precio </h1>
 @stop
 
 @section('content')
 
     @if (session('info'))
-            <div class="alert alert-primary">
-                {{session('info')}}
-            </div>      
+        <div class="alert alert-primary">
+            {{ session('info') }}
+        </div>
     @endif
-    
-   <div class="card">
-       <div class="card-body">
-           <table class="table table-striped">
-               <thead>
-                   <tr>
-                       <th>ID</th>
-                       <th>Name</th>
-                       <th colspan="2"></th>
-                   </tr>
-               </thead>
 
-               <tbody>
-                   @foreach ($prices as $price)
-                       <tr>
-                            <td>{{$price->id}}</td>
-                            <td>{{$price->name}}</td>
+    <div class="card">
+        <div class="card-body table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach ($prices as $price)
+                        <tr>
+                            <td>{{ $price->id }}</td>
+                            <td>{{ $price->name }}</td>
                             <td width="10px">
-                                <a class="btn btn-primary" href="{{route('admin.prices.edit', $price)}}">Editar</a>
+                                <a class="btn btn-primary" href="{{ route('admin.prices.edit', $price) }}">Editar</a>
                             </td>
 
                             <td width="10px">
-                                <form action="{{route('admin.prices.destroy', $price)}}" method="POST">
+                                <form action="{{ route('admin.prices.destroy', $price) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
 
@@ -46,12 +46,12 @@
 
                                 </form>
                             </td>
-                       </tr>
-                   @endforeach
-               </tbody>
-           </table>
-       </div>
-   </div>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 @stop
 
 @section('css')
@@ -59,5 +59,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+    </script>
 @stop

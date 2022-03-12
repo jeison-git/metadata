@@ -3,31 +3,31 @@
 @section('title', 'Level-edit')
 
 @section('content_header')
-    <h1>Actualizar nivel</h1>
+    <h1>Actualizar nivel de dificuldad</h1>
 @stop
 
 @section('content')
 
     @if (session('info'))
         <div class="alert alert-primary">
-            {{session('info')}}
-        </div>        
+            {{ session('info') }}
+        </div>
     @endif
 
     <div class="card">
         <div class="card-body">
             {!! Form::model($level, ['route' => ['admin.levels.update', $level], 'method' => 'put']) !!}
-                <div class="form-group">
-                    {!! Form::label('name', 'Nombre') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del nivel']) !!}
+            <div class="form-group">
+                {!! Form::label('name', 'Nombre') !!}
+                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del nivel']) !!}
 
-                    @error('name')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
+                @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
 
-                </div>
-                {!! Form::submit('Actualizar nivel', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}    
+            </div>
+            {!! Form::submit('Actualizar nivel', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 @stop
@@ -37,5 +37,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+    </script>
 @stop

@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,17 +12,19 @@ class ContactUSMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject =  "Información de contacto";
-    public $contacto;
+    public $subject = "¡Hemos respondido tu solicitud, gracias por escribirnos!";
+    /* public $contacto; */
+    public $contact;
+
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($contacto)
+    public function __construct(Contact $contact)
     {
-        $this->contacto = $contacto;
+        $this->contact = $contact;
     }
 
     /**

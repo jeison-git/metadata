@@ -3,20 +3,20 @@
 @section('title', 'Categories')
 
 @section('content_header')
-    <a class="btn btn-primary btn-sm float-right" href="{{route('admin.categories.create')}}">Nueva categoría</a>
-    <h1>Lista de categorias</h1>
+    <a class="float-right btn btn-primary btn-sm" href="{{ route('admin.categories.create') }}">Nueva categoría</a>
+    <h1>Lista de categorias o asignaturas</h1>
 @stop
 
 @section('content')
 
     @if (session('info'))
         <div class="alert alert-primary">
-            {{session('info')}}
+            {{ session('info') }}
         </div>
     @endif
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -30,26 +30,27 @@
                     @foreach ($categories as $category)
                         <tr>
                             <td>
-                                {{$category->id}}
+                                {{ $category->id }}
                             </td>
                             <td>
-                                {{$category->name}}
+                                {{ $category->name }}
                             </td>
 
                             <td width="10px">
-                                <a class="btn btn-primary btn-sm" href="{{route('admin.categories.edit', $category)}}">Editar</a>
+                                <a class="btn btn-primary btn-sm"
+                                    href="{{ route('admin.categories.edit', $category) }}">Editar</a>
                             </td>
 
                             <td width="10px">
-                              <form action="{{route('admin.categories.destroy', $category)}}" method="POST">
-                                @csrf
-                                @method('delete')
+                                <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
 
-                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                    <button class="btn btn-danger btn-sm">Eliminar</button>
 
-                                </form>  
+                                </form>
                             </td>
-                        </tr>                        
+                        </tr>
                     @endforeach
                 </tbody>
 

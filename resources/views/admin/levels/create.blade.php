@@ -3,7 +3,7 @@
 @section('title', 'Level-create')
 
 @section('content_header')
-    <h1>Crear Niveles</h1>
+    <h1>Crear Niveles de Dificultad</h1>
 @stop
 
 @section('content')
@@ -11,17 +11,17 @@
     <div class="card">
         <div class="card-body">
             {!! Form::open(['route' => 'admin.levels.store']) !!}
-                <div class="form-group">
-                    {!! Form::label('name', 'Nombre') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del nivel']) !!}
+            <div class="form-group">
+                {!! Form::label('name', 'Nombre') !!}
+                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del nivel']) !!}
 
-                    @error('name')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
+                @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
 
-                </div>
-                {!! Form::submit('Crear nivel', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}    
+            </div>
+            {!! Form::submit('Crear nivel', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 @stop
@@ -31,5 +31,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+    </script>
 @stop

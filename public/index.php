@@ -16,8 +16,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
-    require __DIR__.'/../storage/framework/maintenance.php';
+if (file_exists(__DIR__ . '/../storage/framework/maintenance.php')) {
+    require __DIR__ . '/../storage/framework/maintenance.php';
 }
 
 /*
@@ -31,7 +31,7 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
@@ -53,3 +53,12 @@ $response = tap($kernel->handle(
 ))->send();
 
 $kernel->terminate($request, $response);
+
+
+if ((isset($_SERVER["HTTP_X_FORWARDED_PROTO"]) && $_SERVER["HTTP_X_FORWARDED_PROTO"] === 'http')) {
+    // redireccionar a https
+    $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $redirect);
+    exit();
+}

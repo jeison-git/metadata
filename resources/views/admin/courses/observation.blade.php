@@ -3,7 +3,7 @@
 @section('title', 'Observation')
 
 @section('content_header')
-    <h1 class="">Observaciones del curso: {{$course->title}}</h1>
+    <h1 class="">Observaciones de la información para el curso: {{$course->title}}</h1>
 @stop
 
 @section('content')
@@ -11,15 +11,15 @@
         <div class="card-body">
             {!! Form::open(['route' => ['admin.courses.reject', $course]]) !!}
                 <div class="form-group">
-                    {!! Form::label('body', 'Observaciones del curso') !!}
+                    {!! Form::label('body', 'Observaciones de la información/curso') !!}
                     {!! Form::textarea('body', null) !!}
 
-                    @error('body')                       
+                    @error('body')
                     <strong class="text-danger">{{$message}}</strong>
                     @enderror
-                    
+
                 </div>
-                 {!! Form::submit('Rechazar curso', ['class' => 'btn btn-primary']) !!}   
+                 {!! Form::submit('Rechazar información/curso', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>

@@ -24,8 +24,8 @@ Route::view('privacy', 'privacy')->name('privacy');
 
 Route::view('termms', 'termms')->name('termms');
 
-Route::get('contact', [ContactUSController::class, 'index'])->name('contact.index');
 
-Route::post('contact', [ContactUSController::class, 'store'])->name('contact.store');
+//Rutas centro de apoyo contactanos
+Route::get('contacts', [ContactUsController::class, 'index'])->name('contact.index');/* contacto */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () { return view('dashboard'); })->name('dashboard');

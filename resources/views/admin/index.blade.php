@@ -3,11 +3,11 @@
 @section('title', 'Admin-Menu')
 
 @section('content_header')
-    <h1>INICIO</h1>
+    <h1>MENU</h1>
 @stop
 
 @section('content')
-    <p>BIENVENIDOS AL MENU DE INICIO.</p>
+    <p>BIENVENIDOS ESTIMADO ADMINISTRADOR :)</p>
 @stop
 
 @section('css')

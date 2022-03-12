@@ -13,9 +13,9 @@ use App\Mail\RejectCourse;
 class CourseController extends Controller
 {
     public function index(){
-        $courses = Course::where('status', 2)->paginate(8);
+        /* $courses = Course::where('status', '>', 1)->latest('id')->paginate(8); */
 
-        return view('admin.courses.index', compact('courses'));
+        return view('admin.courses.index');
     }
 
     public function show(Course $course){
