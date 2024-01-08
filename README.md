@@ -1,6 +1,6 @@
 # Metadata
 
-_Para la construcción de Cursos Virtuales_
+_Para el intercambio de datos_
 
 ## Comenzando 🚀
 
